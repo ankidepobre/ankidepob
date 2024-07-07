@@ -1,0 +1,99 @@
+let currentOverlayIndex = 0;
+const firstImageOverlays = [
+    document.getElementById('overlay0'),
+    document.getElementById('overlay1'),
+    document.getElementById('overlay2'),
+    document.getElementById('overlay3')
+];
+const secondImageOverlays = [
+    document.getElementById('overlay10'),
+    document.getElementById('overlay4'),
+    document.getElementById('overlay5'),
+    document.getElementById('overlay6'),
+    document.getElementById('overlay7'),
+    document.getElementById('overlay8'),
+    document.getElementById('overlay9')
+];
+const thirdImageOverlays = [
+    document.getElementById('overlay20'),
+    document.getElementById('overlay21'),
+    document.getElementById('overlay22')
+];
+
+function hideNextOverlayImage() {
+    if (document.getElementById('imagem1').classList.contains('active')) {
+        if (currentOverlayIndex < firstImageOverlays.length) {
+            firstImageOverlays[currentOverlayIndex].style.display = 'none';
+            currentOverlayIndex++;
+        }
+    } else if (document.getElementById('imagem2').classList.contains('active')) {
+        if (currentOverlayIndex < secondImageOverlays.length) {
+            secondImageOverlays[currentOverlayIndex].style.display = 'none';
+            currentOverlayIndex++;
+        }
+    } else if (document.getElementById('imagem3').classList.contains('active')) {
+        if (currentOverlayIndex < thirdImageOverlays.length) {
+            thirdImageOverlays[currentOverlayIndex].style.display = 'none';
+            currentOverlayIndex++;
+        }
+    }
+}
+
+function goToNextScreen() {
+    const currentActiveImage = document.querySelector('.image.active');
+
+    if (currentActiveImage.id === 'imagemInicial') {
+        currentActiveImage.classList.remove('active');
+        document.getElementById('imagemIntermediaria').classList.add('active');
+    } else if (currentActiveImage.id === 'imagemIntermediaria') {
+        currentActiveImage.classList.remove('active');
+        document.getElementById('imagem1').classList.add('active');
+        firstImageOverlays.forEach(overlay => overlay.style.display = 'block');
+    } else if (currentActiveImage.id === 'imagem1') {
+        currentActiveImage.classList.remove('active');
+        document.getElementById('imagem2').classList.add('active');
+        currentOverlayIndex = 0;
+        firstImageOverlays.forEach(overlay => overlay.style.display = 'none');
+        secondImageOverlays.forEach(overlay => overlay.style.display = 'block');
+    } else if (currentActiveImage.id === 'imagem2') {
+        currentActiveImage.classList.remove('active');
+        document.getElementById('imagem3').classList.add('active');
+        currentOverlayIndex = 0;
+        secondImageOverlays.forEach(overlay => overlay.style.display = 'none');
+        thirdImageOverlays.forEach(overlay => overlay.style.display = 'block');
+    } else if (currentActiveImage.id === 'imagem3') {
+        currentActiveImage.classList.remove('active');
+        document.getElementById('imagem4').classList.add('active');
+        currentOverlayIndex = 0;
+        thirdImageOverlays.forEach(overlay => overlay.style.display = 'none');
+    }
+}
+
+function goToPreviousScreen() {
+    const currentActiveImage = document.querySelector('.image.active');
+
+    if (currentActiveImage.id === 'imagem4') {
+        currentActiveImage.classList.remove('active');
+        document.getElementById('imagem3').classList.add('active');
+        currentOverlayIndex = 0;
+        thirdImageOverlays.forEach(overlay => overlay.style.display = 'block');
+    } else if (currentActiveImage.id === 'imagem3') {
+        currentActiveImage.classList.remove('active');
+        document.getElementById('imagem2').classList.add('active');
+        currentOverlayIndex = 0;
+        thirdImageOverlays.forEach(overlay => overlay.style.display = 'none');
+        secondImageOverlays.forEach(overlay => overlay.style.display = 'block');
+    } else if (currentActiveImage.id === 'imagem2') {
+        currentActiveImage.classList.remove('active');
+        document.getElementById('imagem1').classList.add('active');
+        currentOverlayIndex = 0;
+        secondImageOverlays.forEach(overlay => overlay.style.display = 'none');
+        firstImageOverlays.forEach(overlay => overlay.style.display = 'block');
+    } else if (currentActiveImage.id === 'imagem1') {
+        currentActiveImage.classList.remove('active');
+        document.getElementById('imagemIntermediaria').classList.add('active');
+    } else if (currentActiveImage.id === 'imagemIntermediaria') {
+        currentActiveImage.classList.remove('active');
+        document.getElementById('imagemInicial').classList.add('active');
+    }
+}

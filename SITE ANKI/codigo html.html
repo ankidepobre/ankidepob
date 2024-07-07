@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desaparecer Imagens Sobrepostas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body onclick="hideNextOverlayImage()">
+    <div class="container">
+        <img src="C:/Users/erikw/Desktop/SITE ANKI/capa anki de pobre.png" alt="Imagem Inicial" class="image active" id="imagemInicial">
+        <img src="C:/Users/erikw/Desktop/SITE ANKI/neutrofilos.png" alt="Imagem Intermediária" class="image" id="imagemIntermediaria">
+        <img src="C:/Users/erikw/Desktop/SITE ANKI/1 - sem caixas neutrofilo.png" alt="Imagem 1" class="image" id="imagem1">
+        <img src="C:/Users/erikw/Desktop/SITE ANKI/caixa 1 neutrofilo 1.jpg" alt="Imagem Sobreposta 0" class="overlay-image" id="overlay0">
+        <img src="C:/Users/erikw/Desktop/SITE ANKI/caixa 1 neutrofilo 1.jpg" alt="Imagem Sobreposta 1" class="overlay-image" id="overlay1">
+        <img src="C:/Users/erikw/Desktop/SITE ANKI/caixa 2 neutrofilo 1.jpg" alt="Imagem Sobreposta 2" class="overlay-image" id="overlay2">
+        <img src="C:/Users/erikw/Desktop/SITE ANKI/caixa 3 neutrofilo 1.jpg" alt="Imagem Sobreposta 3" class="overlay-image" id="overlay3">
+        <img src="C:/Users/erikw/Desktop/SITE ANKI/2 - sem caixas neutrofilo.png" alt="Imagem 2" class="image" id="imagem2">
+        <img src="C:/Users/erikw/Desktop/SITE ANKI/caixa 4 neutrofilo 2 - Copia.jpg" alt="Imagem Sobreposta 10" class="overlay-image second-image-overlay" id="overlay10">
+        <img src="C:/Users/erikw/Desktop/SITE ANKI/caixa 1 neutrofilo 2.jpg" alt="Imagem Sobreposta 4" class="overlay-image second-image-overlay" id="overlay4">
+        <img src="C:/Users/erikw/Desktop/SITE ANKI/caixa 2 neutrofilo 2.jpg" alt="Imagem Sobreposta 5" class="overlay-image second-image-overlay" id="overlay5">
+        <img src="C:/Users/erikw/Desktop/SITE ANKI/caixa 3 neutrofilo 2.png" alt="Imagem Sobreposta 6" class="overlay-image second-image-overlay" id="overlay6">
+        <img src="C:/Users/erikw/Desktop/SITE ANKI/caixa 4 neutrofilo 2.jpg" alt="Imagem Sobreposta 7" class="overlay-image second-image-overlay" id="overlay7">
+        <img src="C:/Users/erikw/Desktop/SITE ANKI/caixa 5 neutrofilo 2.jpg" alt="Imagem Sobreposta 8" class="overlay-image second-image-overlay" id="overlay8">
+        <img src="C:/Users/erikw/Desktop/SITE ANKI/caixa 6 neutrofilo 2.jpg" alt="Imagem Sobreposta 9" class="overlay-image second-image-overlay" id="overlay9">
+        <img src="C:/Users/erikw/Desktop/SITE ANKI/eosinofilos.png" alt="Imagem 3" class="image" id="imagem3">
+        <img src="C:/Users/erikw/Desktop/SITE ANKI/caixa 1 eosinofilo 3.jpg" alt="Imagem Sobreposta 20" class="overlay-image third-image-overlay" id="overlay20">
+        <img src="C:/Users/erikw/Desktop/SITE ANKI/caixa 2 eosinofilo 3.jpg" alt="Imagem Sobreposta 21" class="overlay-image third-image-overlay" id="overlay21">
+        <img src="C:/Users/erikw/Desktop/SITE ANKI/caixa 3 eosinofilo 3.png" alt="Imagem Sobreposta 22" class="overlay-image third-image-overlay" id="overlay22">
+        <img src="C:/Users/erikw/Desktop/SITE ANKI/2 - sem caixas eosinofilo.png" alt="Imagem 4" class="image" id="imagem4">
+    </div>
+
+    <button onclick="goToNextScreen()" aria-label="Ir para a próxima tela" class="next"></button>
+    <button onclick="goToPreviousScreen()" aria-label="Voltar para a tela anterior" class="back"></button>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
